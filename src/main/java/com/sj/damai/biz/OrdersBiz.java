@@ -3,6 +3,7 @@ package com.sj.damai.biz;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sj.damai.dao.CartDao;
 import com.sj.damai.dao.OrdersDao;
@@ -17,6 +18,7 @@ public class OrdersBiz {
 	private OrdersDao odao;
 	
 	//提交购物车功能
+	@Transactional
 	public void pay(Orders orders) throws BizException {
 		Utils.checkNull(orders.getName(), "收货人姓名不能为空!");
 		Utils.checkNull(orders.getAddr(), "地址不能为空!");

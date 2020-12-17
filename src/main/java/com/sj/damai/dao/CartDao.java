@@ -16,6 +16,7 @@ public class CartDao extends BaseDao{
 		return jt.queryForList(sql, uid);
 	}
 	
+	
 	//新增购物车
 	public int insertCart(int uid,int pid,int count) {
 		String sql="insert into cart values(default,?,?,?)";
@@ -33,7 +34,6 @@ public class CartDao extends BaseDao{
 	}
 
 	public void deleteByUid(Integer uid) {
-		// TODO Auto-generated method stub
-		
+		jt.update("delete from cart where uid=?",uid);
 	}
 }
