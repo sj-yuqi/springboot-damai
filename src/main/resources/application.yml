@@ -1,0 +1,40 @@
+#yml文件使用缩进表示层级关系,缩进必须是空格符，绝对不能使用制表符  
+#专业的yml编辑器，会自动将tab转成多个空格
+#相同的层级必须有相同的空格
+# :   冒号+空格
+
+server: 
+   port: 80
+
+spring:
+   dataSource:
+      url: jdbc:mysql://127.0.0.1:3306/CZ21-S2-Ply-damai
+      #yml支持驼峰命名  +   -号分隔符 
+      #driverClassName
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: a
+      #相同的配置节点只能出现一次
+   mail:
+      #邮箱服务器地址
+      host: smtp.qq.com
+      #用户名
+      username: 1914045221@qq.com
+      #密码
+      password: wwpnyssentbeehhf
+      default-encoding: UTF-8
+#以谁发来邮件(自定义配置信息)
+mail:
+   from: 
+      addr: 1914045221@qq.com
+#Springboot  日志输出配置
+logging:
+   level:
+   #下面是对指定的包的日志输出进行设定
+   #日志级别：debug 调试  info  ,warn,error
+      com:
+         sj:
+            damai:
+               dao: debug
+               web: warn
+
